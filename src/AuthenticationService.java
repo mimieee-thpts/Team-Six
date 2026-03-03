@@ -17,7 +17,7 @@ public class AuthenticationService implements IAuthenticationService {
         return null;
     }
 
-    // TODO Now: Add a constructor to initialize the users list with the default user
+    // DONE TODO Now: Add a constructor to initialize the users list with the default user
 
     // TODO Now: Implement the signUp method to add a new user to the list if the username is not taken and return the user; returns null otherwise
 
