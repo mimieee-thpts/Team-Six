@@ -1,5 +1,21 @@
+import java.util.ArrayList;
+
 public class AuthenticationService implements IAuthenticationService {
     private ArrayList<User> users;
+
+    public AuthenticationService(ArrayList<User> users) {
+        this.users = users;
+    }
+
+    @Override
+    public User signUp(String username, String password) {
+        return null;
+    }
+
+    @Override
+    public User logIn(String username, String password) {
+        return null;
+    }
 
     // TODO Now: Add a constructor to initialize the users list with the default user
 
