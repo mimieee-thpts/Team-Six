@@ -9,7 +9,18 @@ public class AuthenticationService implements IAuthenticationService {
 
     @Override
     public User signUp(String username, String password) {
-        return null;
+        // iterate through list of users to see if any user contains the same username as the entered username.
+        for (User user : users) {
+            if (user.getUsername().equals(username)) {
+                // exit out of method if username already exists
+                return null;
+            }
+        }
+
+        // create new user if username does not already exist.
+        User newUser = new User(username, password);
+        users.add(newUser);
+        return newUser;
     }
 
     @Override
@@ -19,7 +30,7 @@ public class AuthenticationService implements IAuthenticationService {
 
     // DONE TODO Now: Add a constructor to initialize the users list with the default user
 
-    // TODO Now: Implement the signUp method to add a new user to the list if the username is not taken and return the user; returns null otherwise
+    // DONE TODO Now: Implement the signUp method to add a new user to the list if the username is not taken and return the user; returns null otherwise
 
     // TODO Now: Implement the logIn method to return the user if the username and password match, and null otherwise
 }
