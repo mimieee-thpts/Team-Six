@@ -7,6 +7,12 @@ public class AuthenticationService implements IAuthenticationService {
         this.users = users;
     }
 
+    /**
+     * check that the username does not already exist before creating a new user
+     * @param username new user username
+     * @param password new user password
+     * @return new user, or null if the username already exists
+     */
     @Override
     public User signUp(String username, String password) {
         // iterate through list of users to see if any user contains the same username as the entered username.
