@@ -23,8 +23,20 @@ public class AuthenticationService implements IAuthenticationService {
         return newUser;
     }
 
+    /**
+     * check if the user is valid before returning the login user
+     * @param username login user username
+     * @param password login user password
+     * @return the user if the username and password match, and null otherwise
+     */
     @Override
     public User logIn(String username, String password) {
+        for (User user : users) {
+            if (user.getUsername().equals(username) && user.getPassword().equals(password)) {
+                return user;
+            }
+        }
+        // if no user matches
         return null;
     }
 
@@ -32,5 +44,5 @@ public class AuthenticationService implements IAuthenticationService {
 
     // DONE TODO Now: Implement the signUp method to add a new user to the list if the username is not taken and return the user; returns null otherwise
 
-    // TODO Now: Implement the logIn method to return the user if the username and password match, and null otherwise
+    // DONE TODO Now: Implement the logIn method to return the user if the username and password match, and null otherwise
 }
